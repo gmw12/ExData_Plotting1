@@ -1,8 +1,10 @@
 library(data.table)
 library(dplyr)
 
-# data downloaded from https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
-# and unzipped into "data" folder in working directory
+# download data from url, unzip file to working directory
+df_url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+download.file(df_url, "df.zip")
+unzip("df.zip")
 
 #read data
 df <- fread("./data/household_power_consumption.txt", 
